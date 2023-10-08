@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <title>Neumorphism Login Form UI | CodingNepal</title> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style_login.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+     </head>
+<body>
+          <div id="page-wrapper-login">
+         <div class="content">
+            <div class="text">
+                      <img src="{{ url_for('static', filename='logo.PNG') }}" alt="Your Image Description">
+         </div>
+        <!--<img src="{{ url_for('static', filename='logo.PNG') }}" alt="Your Image Description">-->
+       <form  id="registration-form" method="POST" action="/register">
+        <div class="field">
+            <input type="text" id="username" name="username" required class="username-input">
+            <span class="fas fa-user"></span>
+            <label for="username">Your Name</label>
+         </div>
+          <div class="field">
+             <input type="text" id="usernumber" name="usernumber" required class="usernumber-input">
+             <span class="fas fa-phone"></span>
+             <label for="usernumber">Phone Number</label>
+          </div>
+          <div class="field">
+             <input type="password" id="password" name="password" required class="username-input">
+             <span class="fas fa-lock"></span>
+             <label for="password">Choose Password</label>
+          </div>
+          <div class="field">
+            <input type="text" id="ref_code" name="ref_code" required class="username-input" value="{{ ref_code|default('') }}">
+            <span class="fas fa-code"></span>
+            <label for="ref_code">Refered Code</label>
+         </div>
+          <button id="login-button">Registere</button>
+          <div class="sign-up">
+            Have an account?
+             <a href="/login">Login here</a>
+          </div>
+
+       </form>
+       <div id="success-message" style="display: none; color: green;">
+        Registration successful!
+    </div>
+    <script>
+        document.getElementById('registration-form').addEventListener('login-button', function (e) {
+            e.preventDefault();
+
+            // Perform the registration logic here.
+            // If registration is successful, display the success message.
+            // You can use AJAX to send the form data to the server and receive a response.
+
+            // For demonstration purposes, we will just show the success message.
+            document.getElementById('success-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

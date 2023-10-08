@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ username }}!</h1>
+    <p>This is your dashboard.</p>
+    
+    <!-- Logout link -->
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+</body>
+</html>

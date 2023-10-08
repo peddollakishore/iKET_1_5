@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+	      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- <title>Neumorphism Login Form UI | CodingNepal</title> -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style_login.css') }}">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div id="page-wrapper-login">
+         <img src="{{ url_for('static', filename='logo.png') }}" alt="Your Image Description">
+        <form method="POST" action="/login" >
+           <div class="field">
+              <input type="text" id="usernumber" name="usernumber" required class="usernumber-input"  value="{{ usernumber }}">
+              <span class="fas fa-user"></span>
+              <label for="usernumber">Phone Number</label>
+           </div>
+           <div class="field">
+              <input type="password" id="password" name="password" required class="password-input">
+              <span class="fas fa-lock"></span>
+              <label for="password">Password</label>
+           </div>
+           <p style="color: red;" class="error">{{ error_message }}</p>
+           <button id="login-button">Log In</button>
+           <div class="sign-up">
+              Not a member?
+              <a href="/register">Register</a>
+            </div>
+           
+        </form>
+      </div>
+<!-- Success Popup -->
+<div id="success-popup" class="popup">
+   <div class="popup-content">
+      <div class="success-message">✔</div>
+      
+   </div>
+</div>
+   </div>
+
+     <script src="{{ url_for('static', filename='assets/js/pop.js') }}"></script>
+   </body>
+</html>
