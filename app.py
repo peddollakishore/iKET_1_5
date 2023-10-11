@@ -19,11 +19,9 @@ app.secret_key = 'your_secret_key'
 # Configure MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Aniket@9'
 app.config['MYSQL_DB'] = 'kissdb'
 
-mysql = mysql.connector.connect(host=app.config['MYSQL_HOST'], user=app.config['MYSQL_USER'],
-                                password=app.config['MYSQL_PASSWORD'], database=app.config['MYSQL_DB'])
+mysql = mysql.connector.connect(host=app.config['MYSQL_HOST'], user=app.config['MYSQL_USER'], database=app.config['MYSQL_DB'])
 
 cursor = mysql.cursor()
 from werkzeug.security import generate_password_hash, check_password_hash
